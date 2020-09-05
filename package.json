@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "mkdir": "ts-node src/mkdir.ts",
+    "test:allbrowser": "ts-node src/allBrowser.ts",
+    "test:appledevice": "ts-node src/appleDevices.ts",
+    "test:androiddevice": "ts-node src/androidDevices.ts",
+    "test:otherdevice": "ts-node src/otherDevices.ts",
+    "test": "run-p test:*"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.3.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  }
+}
