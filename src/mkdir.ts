@@ -1,8 +1,14 @@
-import * as fs from 'fs';
+import { existsSync, mkdirSync } from 'fs';
 
-fs.mkdirSync('capture')
-fs.mkdirSync('capture/browser')
-fs.mkdirSync('capture/device')
-fs.mkdirSync('capture/device/android')
-fs.mkdirSync('capture/device/apple')
-fs.mkdirSync('capture/device/other')
+const folderList = [
+  'capture',
+  'capture/browser',
+  'capture/device',
+  'capture/device/android',
+  'capture/device/apple',
+  'capture/device/other',
+]
+
+folderList.forEach(folder => {
+  if(!existsSync(folder)) mkdirSync(folder)
+})
