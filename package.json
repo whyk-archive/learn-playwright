@@ -1,6 +1,7 @@
 {
   "scripts": {
     "mkdir": "ts-node src/mkdir.ts",
+    "pretest": "yarn mkdir",
     "test:allbrowser": "ts-node src/allBrowser.ts",
     "test:appledevice": "ts-node src/appleDevices.ts",
     "test:androiddevice": "ts-node src/androidDevices.ts",
