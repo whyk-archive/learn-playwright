@@ -10,8 +10,20 @@ Microsoftから出されたブラウザ自動化ツール。以下のブラウ�
 - Webkit
 
 ## 注意点
-まず、キャプチャを格納するディレクトリを作成する。  
-以下コマンドを実行しない場合、`yarn test`がエラーになる。
+### `yarn test`のメモリリーク
+`yarn test`はキャプチャの処理が重くてメモリリークを起こす。  
+そのため、各個の動作が見たい場合は以下`yarn test:*`を推奨。
+
+``` bash
+yarn test:allbrowser # Chrome, Firefox, Webkit
+yarn test:appledevice # playwrightに存在するすべてのAppleモバイルデバイス（ブラウザはWebkit）
+yarn test:androiddevice # playwrightに存在するすべてのAndroidモバイルデバイス（ブラウザはChrome）
+yarn test:otherdevice # playwrightに存在するBlackberryなどのその他モバイルデバイス（ブラウザはFirefox）
+```
+
+### キャプチャフォルダの事前作成
+テストを走らせる前にキャプチャ格納用のフォルダを作成しないとエラーになる。
+`yarn test:*`は、事前に以下を実行する必要がある。
 ``` bash 
 $ yarn mkdir
 ```
